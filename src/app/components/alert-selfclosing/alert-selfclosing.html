@@ -1,0 +1,7 @@
+<ngb-alert class="alert alert-warning" *ngIf="successMessage" type="success" (close)="successMessage = ''">
+    {{ successMessage }}</ngb-alert>
+
+
+<x *ngIf="successMessage == false">
+    <button class="btn btn-warning" (click)="changeSuccessMessage()">Apply for job</button>
+</x>

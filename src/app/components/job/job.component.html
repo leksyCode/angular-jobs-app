@@ -1,0 +1,49 @@
+<div class="container">
+    <br>
+    <h1>Jobs {{searchLabel}} remote in New-York</h1><br>
+    <form (keyup)="filter(job.value)" class="form-inline">
+        <div class="form-group">
+            <input class="form-control" id="job" type="text" placeholder="Search " #job><br>
+        </div>
+    </form>
+    <br>
+
+    <div *ngFor="let job of Jobs">
+        <div class="p-3 mb-2 bg-info text-white">
+            <h4>{{job.jobTitle}}<small> at {{job.company}} </small></h4>
+        </div>
+
+        <div class="alert">
+            <small id="job_options">
+                {{job.country}}, {{job.city}},
+                <x *ngIf="job.remote">remote, </x>{{job.minimumExperience}}+ years of experience, {{job.sallary}}$
+                <div id="posted">{{job.postedAgo}} days ago</div>
+            </small>
+            <p>{{job.description}}</p>
+
+            <!-- Apply component -->
+            <alert-apply></alert-apply>
+            <button id="comments-btn" class="btn btn-outline-secondary" (click)="showComments(job.id)">Show
+                comments</button><br><br>
+
+            <!-- Comments -->
+            <div *ngIf="job.isComments">
+                <h5>Comments</h5>
+                <div>
+                    <ul>
+                        <li *ngFor="let comment of job.comments">{{comment}}</li>
+                    </ul>
+                </div>
+
+
+                <form (submit)="addComment(comment.value, job.id)">
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="comment" placeholder="Your comment" #comment><br>
+                        <button type="submit" class="btn btn-outline-secondary">Reply</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
