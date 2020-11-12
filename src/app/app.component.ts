@@ -9,21 +9,24 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Jobs';
-  appModelStyle: string = '';
+  appModeStyle: string = '';
   buttonStyle: string = '';
+  darkMode: boolean = false;
 
   constructor() {
 
   }
 
   changeAppStyle() {
-    if(this.appModelStyle == 'dark-mode') {
-      this.appModelStyle = 'light-mode';
+    if(this.appModeStyle == 'dark-mode') {
+      this.appModeStyle = 'light-mode';
       this.buttonStyle = '';
+      this.darkMode = false;
     }
     else {
-      this.appModelStyle = 'dark-mode';
+      this.appModeStyle = 'dark-mode';
       this.buttonStyle = 'element-on';
+      this.darkMode = true;
     }
    
    

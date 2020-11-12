@@ -4,7 +4,11 @@ a {
 }
 
 a:hover {
-    color: rgb(250, 228, 154);
+    color: rgb(181, 236, 240);
+}
+
+#company-name {
+    color: rgb(181, 236, 240);
 }
 
 div#posted {

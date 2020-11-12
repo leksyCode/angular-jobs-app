@@ -1,4 +1,9 @@
+header {
+    background-color: rgb(89, 89, 151);
+}
+
 .dark-mode {
+    color: whitesmoke;
     background-color: rgb(51, 51, 61);
 }
 
@@ -7,14 +12,22 @@
 }
 
 .element-on {
-    background-color: rgb(255, 101, 62);
+    color: rgb(231, 231, 231);
 }
 
-#dark-mode-button {
+.switch-button {
     background-color: Transparent;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
     overflow: hidden;
     outline: none;
+}
+
+#content {
+    min-height: calc(100vh);
+}
+
+a {
+    color: white;
 }
