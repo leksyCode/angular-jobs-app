@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'Jobs';
-  appModeStyle: string = '';
-  buttonStyle: string = '';
-  darkMode: boolean = false;
+  appModeStyle: string = 'dark-mode';
+  buttonStyle: string = 'element-on';
+  darkMode: boolean = true;
 
   constructor() {
 

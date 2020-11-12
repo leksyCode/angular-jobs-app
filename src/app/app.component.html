@@ -1,29 +1,25 @@
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md ">
+        <a class=" navbar-brand " routerLink="/">Jobs</a>
+        <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarCollapse " aria-controls="navbarCollapse "></button>
+        <div class="collapse navbar-collapse " id="navbarCollapse ">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item active ">
+                    <a class="nav-link " routerLink="/profile">Profile</a>
+                </li>
+
+            </ul>
+            <button class="switch-button element-on" mat-menu-button [ngClass]="{ 'element-on': darkMode, '': !darkMode  }" (click)="changeAppStyle()">
+                <mat-icon>bedtime</mat-icon>
+            </button>
+            <user-menu></user-menu>
+
+        </div>
+
+    </nav>
+</header>
+
 <div id="content" [ngClass]="{ 'dark-mode': darkMode, 'light-mode': !darkMode  }">
-    <header>
-        <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-md ">
-            <a class=" navbar-brand " routerLink="/">Jobs</a>
-            <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarCollapse " aria-controls="navbarCollapse "></button>
-            <div class="collapse navbar-collapse " id="navbarCollapse ">
-                <ul class="navbar-nav mr-auto ">
-                    <li class="nav-item active ">
-                        <a class="nav-link " routerLink="/profile">Profile</a>
-                    </li>
-                    <li class="nav-item active ">
-                        <a class="nav-link " routerLink="/login">Login</a>
-                    </li>
-                </ul>
-
-
-                <button class="switch-button element-on" mat-menu-button [ngClass]="{ 'element-on': darkMode, '': !darkMode  }" (click)="changeAppStyle()">
-                    <mat-icon>bedtime</mat-icon>
-                </button>
-                <user-menu></user-menu>
-
-            </div>
-
-        </nav>
-    </header>
-
     <router-outlet></router-outlet>
 </div>

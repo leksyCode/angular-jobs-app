@@ -1,15 +1,19 @@
 <div class="container">
-    <br>
-    <div *ngIf="currentUser != null">
+    <div *ngIf="currentUser != null; else elseBlock">
+        <br>
         <h5>You are logged in as {{currentUser.name}}!</h5>
+        <hr>
+        <p>email: {{currentUser.email}}</p>
+        <p>password: {{currentUser.password}}</p>
+        <p>country: {{currentUser.country}}</p>
+        <p>city: {{currentUser.city}}</p>
+        <p>role: {{currentUser.role}}</p>
+        <p>about: {{currentUser.about}}</p>
+        <form class="form-inline" (click)="signOut()">
+            <button class="btn btn-warning from-control" type="button">Sign out</button>
+        </form>
     </div>
-    <hr>
-    <p>email: {{currentUser.email}}</p>
-    <p>password: {{currentUser.password}}</p>
-    <p>country: {{currentUser.country}}</p>
-    <p>city: {{currentUser.city}}</p>
-    <p>role: {{currentUser.role}}</p>
-    <p>about: {{currentUser.about}}</p>
-
-
+    <ng-template #elseBlock>
+        <h5>You are not logged in!</h5>
+    </ng-template>
 </div>

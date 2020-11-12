@@ -1,11 +1,11 @@
-<div *ngIf="currentUser != null">
+<div *ngIf="currentUser != null; else elseBlock">
+
     <button mat-menu-item [matMenuTriggerFor]="menu">
         <mat-icon> account_circle</mat-icon>
     </button>
 
-
     <mat-menu #menu="matMenu" [ngSwitch]="true">
-        <button class="mat-menu-item">
+        <button mat-menu-item (click)="goToProfile()">
             <mat-icon>person</mat-icon>
             <span>{{currentUser.name}}</span>
         </button>
@@ -22,7 +22,7 @@
             <mat-icon>library_books</mat-icon>
             <span>My jobs</span>
         </button>
-        <button mat-menu-item>
+        <button (click)="signOut()" mat-menu-item>
             <mat-icon>login</mat-icon>
             <span>Sign out</span>
         </button>
@@ -32,3 +32,33 @@
         </button>
     </mat-menu>
 </div>
+
+<ng-template #elseBlock>
+    <button mat-menu-item [matMenuTriggerFor]="menu">
+        <mat-icon> account_circle</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="signIn() ">
+            <mat-icon>person</mat-icon>
+            <span>Guest</span>
+        </button>
+        <hr>
+        <button mat-menu-item (click)="signIn() ">
+            <mat-icon>photo_filter</mat-icon>
+            <span>My applies</span>
+        </button>
+        <button mat-menu-item (click)="signIn() ">
+            <mat-icon>post_add</mat-icon>
+            <span>New job</span>
+        </button>
+        <button mat-menu-item (click)="signIn() ">
+            <mat-icon>library_books</mat-icon>
+            <span>My jobs</span>
+        </button>
+        <button (click)="signIn() " mat-menu-item>
+            <mat-icon>login</mat-icon>
+            <span>Sign In</span>
+        </button>
+    </mat-menu>
+</ng-template>

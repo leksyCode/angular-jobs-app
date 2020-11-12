@@ -27,8 +27,19 @@ export class UserService {
     Users.unshift(user);
   }
 
+
   authenticateUser(email: string, password: string) {
     this.currentUser = Users.find(user => user.email === email && user.password === password);
-    return this.currentUser;
+    localStorage.setItem('authUser', this.currentUser.id.toString());
   }
+
+  getAuthenticatedUser() {
+    return  this.getUserById(Number(localStorage.getItem('authUser')));
+  }
+
+  removeAuthenticatedUser() {
+    localStorage.removeItem('authUser');
+  }
+
+  
 }

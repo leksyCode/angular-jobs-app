@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit, SimpleChanges } from '@angular/core';
 import { User } from './user';
 import { UserService } from './user.service';
 
@@ -8,15 +8,17 @@ import { UserService } from './user.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements DoCheck {
   currentUser: User;
   constructor(private userService: UserService) {
     
   }
 
-  ngOnInit() {
-    this.currentUser = this.userService.authenticateUser('google@gmail.com', 'password');
+  ngDoCheck(){
+    this.currentUser = this.userService.getAuthenticatedUser();
   }
 
-  
+  signOut() {
+    this.userService.removeAuthenticatedUser();
+  }
 }
