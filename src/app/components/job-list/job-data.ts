@@ -5,7 +5,7 @@ export let Jobs: Job[] = [
     id: 1,
     jobTitle: '.Net Back-end developer',
     sallary: 2500, 
-    remote: true,
+    workType: 'full-time',
     country: 'Bulgaria',
     city: 'Plovdiv',
     company: 'CodeCoda ltd',
@@ -15,12 +15,13 @@ export let Jobs: Job[] = [
     postedAgo: null,
     isComments: false,
     comments: ["guys don't go here", "will you feed me free burgers"],
+    stars: 13
   },
   {
     id: 2,
     jobTitle: 'Angular Front-end developer',
     sallary: 3500, 
-    remote: true,
+    workType: 'remote',
     country: 'Ukraine',
     city: 'Odessa',
     company: 'Apastera',
@@ -30,12 +31,13 @@ export let Jobs: Job[] = [
     postedAgo: null,
     isComments: false,
     comments: ["guys don't go here", "will you feed me free burgers"],
+    stars: 6
   },
   {
     id: 3,
     jobTitle: '.Net Core / Angular full-stack developer',
     sallary: 3200, 
-    remote: true,
+    workType: 'part-time',
     country: 'Bulgaria',
     city: 'Plovdiv',
     company: 'HYS Enterprise',
@@ -45,12 +47,13 @@ export let Jobs: Job[] = [
     postedAgo: null,
     isComments: false,
     comments: ["guys don't go here", "will you feed me free burgers"],
+    stars: 11   
   },
   {
     id: 4,
     jobTitle: 'React Front-end developer',
     sallary: 64000, 
-    remote: true,
+    workType: 'full-time',
     country: 'New-York',
     city: 'United States',
     company: 'Facebook',
@@ -60,5 +63,6 @@ export let Jobs: Job[] = [
     postedAgo: null,
     isComments: false,
     comments: ["guys don't go here", "will you feed me free burgers"],
+    stars: 34
   }
 ];

@@ -2,7 +2,7 @@ export class Job {
     id: number;
     jobTitle: string;
     sallary: number;
-    remote: boolean;
+    workType: string;
     country: string;
     city: string;
     company: string;
@@ -12,4 +12,5 @@ export class Job {
     postedAgo: number;
     isComments: boolean;
     comments: string[];
+    stars: number;
 }

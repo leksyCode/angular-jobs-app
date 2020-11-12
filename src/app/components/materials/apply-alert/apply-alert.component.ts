@@ -3,10 +3,10 @@ import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 
 @Component({
-  selector: 'alert-apply',
-  templateUrl: './alert-selfclosing.html'
+  selector: 'apply-alert',
+  templateUrl: 'apply-alert.html'
 })
-export class NgbdAlertSelfclosing implements OnInit {
+export class ApplyJobAllert implements OnInit {
   private _success = new Subject<string>();
 
   successMessage:any = '';

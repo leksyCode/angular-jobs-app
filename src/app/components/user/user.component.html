@@ -1,3 +1,15 @@
 <div class="container">
-    <h3>Profile</h3>
+    <br>
+    <div *ngIf="currentUser != null">
+        <h5>You are logged in as {{currentUser.name}}!</h5>
+    </div>
+    <hr>
+    <p>email: {{currentUser.email}}</p>
+    <p>password: {{currentUser.password}}</p>
+    <p>country: {{currentUser.country}}</p>
+    <p>city: {{currentUser.city}}</p>
+    <p>role: {{currentUser.role}}</p>
+    <p>about: {{currentUser.about}}</p>
+
+
 </div>

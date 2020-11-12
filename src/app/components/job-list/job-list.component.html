@@ -1,33 +1,48 @@
 <div class="container">
     <br>
-    <h1>Jobs {{searchLabel}} remote in New-York</h1><br>
-    <form (keyup)="filter(job.value)" class="form-inline">
+    <form (keyup)="filter(search.value, '')" class="form-inline">
         <div class="form-group">
-            <input class="form-control" id="job" type="text" placeholder="Search " #job><br>
+            <input id="search" class="form-control mr-sm-2 " value={{searchLabel}} placeholder="Search" #search><br>
+
+            <button type="button" class="close" (click)="filter('', 'slFilter.value')">&times;</button>
+
+            <select id="slFilter" class="form-control mr-sm-2" (change)="filter(search.value, slFilter.value)" #slFilter>
+                <option value='recent' selected>Recent</option>
+                <option value="paid">Most paid</option>
+                <option value="rated">Most rated</option>
+            </select>
         </div>
     </form>
     <br>
 
     <div *ngFor="let job of Jobs">
         <div class="p-3 mb-2 bg-info text-white">
-            <h4>{{job.jobTitle}}<small> at {{job.company}} </small></h4>
+
+
+            <h4><a [routerLink]="['/job-details', job.id]">{{job.jobTitle}}</a><small> at {{job.company}}</small></h4>
         </div>
 
         <div class="alert">
+
             <small id="job_options">
-                {{job.country}}, {{job.city}},
-                <x *ngIf="job.remote">remote, </x>{{job.minimumExperience}}+ years of experience, {{job.sallary}}$
+                {{job.country}}, {{job.city}}, {{job.workType}},
+                {{job.minimumExperience}}+ years of experience, {{job.sallary}}$
+                <div class="fa fa-star stars"> {{job.stars}} </div>
                 <div id="posted">{{job.postedAgo}} days ago</div>
             </small>
+
             <p>{{job.description}}</p>
 
             <!-- Apply component -->
-            <alert-apply></alert-apply>
+            <apply-alert></apply-alert>
             <button id="comments-btn" class="btn btn-outline-secondary" (click)="showComments(job.id)">Show
-                comments</button><br><br>
+                comments</button><br>
+
+            <br>
 
             <!-- Comments -->
             <div *ngIf="job.isComments">
+                <hr>
                 <h5>Comments</h5>
                 <div>
                     <ul>
@@ -35,13 +50,13 @@
                     </ul>
                 </div>
 
-
                 <form (submit)="addComment(comment.value, job.id)">
                     <div class="form-group">
                         <input class="form-control" type="text" id="comment" placeholder="Your comment" #comment><br>
                         <button type="submit" class="btn btn-outline-secondary">Reply</button>
                     </div>
                 </form>
+
             </div>
         </div>
 

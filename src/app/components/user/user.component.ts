@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { User } from './user';
+import { UserService } from './user.service';
+
 
 @Component({
   selector: 'app-user',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  currentUser: User;
+  constructor(private userService: UserService) {
+    
   }
 
+  ngOnInit() {
+    this.currentUser = this.userService.authenticateUser('google@gmail.com', 'password');
+  }
+
+  
 }

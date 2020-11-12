@@ -21,20 +21,23 @@ export class JobService {
     return Jobs.find(job => job.jobTitle === jobTitle);
   }
 
+  getJobsByName(search: string): Job[] {
+    return Jobs.filter((job => job.jobTitle.toLowerCase().includes(search.toLowerCase())));
+  }
 
-  getJobs(): Job[] {
-    return Jobs;
+  getJobsByCompany(search: string): Job[] {
+    return Jobs.filter((job => job.company.toLowerCase().includes(search.toLowerCase())));
   }
 
   getMostPayedJobs(): Job[] {
     return Jobs.sort((a, b) => b.sallary - a.sallary);
   }
 
-  getJobsByName(search: string): Job[] {
-    return Jobs.filter((job => job.jobTitle.toLowerCase().includes(search.toLowerCase()) || job.company.toLowerCase().includes(search.toLowerCase())));
+  getResentlyJobs(): Job[] {
+    return Jobs.sort((a, b) =>  a.postedAgo - b.postedAgo);
   }
 
-  getResentlyJobs(): Job[] {  
-    return Jobs.sort((a, b) =>  a.postedAgo - b.postedAgo);
+  getMostRatedJobs(): Job[] {
+    return Jobs.sort((a, b) => b.stars - a.stars);
   }
 }

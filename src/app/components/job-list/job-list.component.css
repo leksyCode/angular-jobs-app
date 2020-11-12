@@ -1,0 +1,36 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(250, 228, 154);
+}
+
+div#posted {
+    position: relative;
+    float: right;
+    right: 30px;
+}
+
+small#job_options {
+    color: rgb(124, 124, 124);
+}
+
+#comments-btn {
+    position: relative;
+    float: right;
+    right: 30px;
+}
+
+.stars {
+    position: relative;
+    float: right;
+    right: 0px;
+    color: orange;
+    font-size: 20px;
+}
+
+.close {
+    margin-right: 10px;
+}
