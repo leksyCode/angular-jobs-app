@@ -10,20 +10,20 @@ import { MatMenuModule} from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon'
 
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JobService } from './components/job-list/job.service';
 import { UserService } from './components/user/user.service';
 import { UserMenuComponent } from './components/materials/user-menu/user-menu.component';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes: Routes = [
   {path: 'jobs', component:JobComponent},
   {path: '', component:JobComponent},
-  {path: 'profile', component:UserComponent},
   {path: 'login', component:LoginComponent},
+  {path: 'register', component: RegisterComponent },
+  {path: 'profile', component:UserComponent},
   {path: 'job-details/:id', component: JobDetailsComponent }
 ]
 
@@ -34,6 +34,7 @@ const appRoutes: Routes = [
     UserComponent,
     LoginComponent,
     ApplyJobAllert,
+    RegisterComponent,
     UserMenuComponent,
     JobDetailsComponent
    ],

@@ -11,7 +11,6 @@ import { UserService } from './user.service';
 export class UserComponent implements DoCheck {
   currentUser: User;
   constructor(private userService: UserService) {
-    
   }
 
   ngDoCheck(){

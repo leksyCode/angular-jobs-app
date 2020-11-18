@@ -1,13 +1,14 @@
 <header>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md ">
-        <a class=" navbar-brand " routerLink="/">Jobs</a>
+        <a class=" navbar-brand " routerLink="/">JobsHub</a>
         <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarCollapse " aria-controls="navbarCollapse "></button>
         <div class="collapse navbar-collapse " id="navbarCollapse ">
             <ul class="navbar-nav mr-auto ">
-                <li class="nav-item active ">
+                <!-- Navbar links-->
+                <!-- <li class="nav-item active ">
                     <a class="nav-link " routerLink="/profile">Profile</a>
-                </li>
+                </li> -->
 
             </ul>
             <button class="switch-button element-on" mat-menu-button [ngClass]="{ 'element-on': darkMode, '': !darkMode  }" (click)="changeAppStyle()">

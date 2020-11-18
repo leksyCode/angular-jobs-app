@@ -40,4 +40,10 @@ export class JobService {
   getMostRatedJobs(): Job[] {
     return Jobs.sort((a, b) => b.stars - a.stars);
   }
+
+  addNewJob() {
+    let job = new Job();
+    Jobs.unshift(job);
+  }
+
 }

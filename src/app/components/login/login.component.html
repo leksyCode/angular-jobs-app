@@ -1,21 +1,24 @@
 <div class="container">
     <br>
     <div *ngIf="currentUser == null; else elseBlock">
-        <h3>Sign in</h3>
+        <legend>Sign in to JobsHub</legend>
+        <br>
         <form>
             <div class="form-group login-form">
 
-                <label for="exampleInputEmail1">Email address</label>
+                <label>Email address</label>
                 <input class="form-control mr-sm-2 " type="email" placeholder="email" #email>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small><br>
 
-                <label for="exampleInputPassword1">Password</label>
+                <label>Password</label>
                 <input class="form-control mr-sm-2 " type="password" placeholder="password" #password><br>
 
                 <button class="btn btn-outline-primary" type="button" (click)="signIn(email.value, password.value)">Sign in</button>
             </div>
         </form>
-
+        <div>
+            New to JobsHub? <a routerLink="/register">Create an account</a>.
+        </div>
     </div>
     <ng-template #elseBlock>
         <br> Hello {{currentUser.name}}!

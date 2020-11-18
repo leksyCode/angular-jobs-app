@@ -1,0 +1,17 @@
+.register-form {
+    width: 300px;
+    overflow: hidden;
+}
+
+.description-form {
+    position: relative;
+    left: -20%;
+    float: right;
+    margin-right: 3px;
+}
+
+div.description-form .form-control {
+    min-height: 460px;
+    max-width: 500px;
+    min-width: 50vh;
+}

@@ -8,7 +8,7 @@
         <p>country: {{currentUser.country}}</p>
         <p>city: {{currentUser.city}}</p>
         <p>role: {{currentUser.role}}</p>
-        <p>about: {{currentUser.about}}</p>
+        <div [innerHtml]="currentUser.summaryHtml"></div>
         <form class="form-inline" (click)="signOut()">
             <button class="btn btn-warning from-control" type="button">Sign out</button>
         </form>

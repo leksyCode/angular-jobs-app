@@ -23,23 +23,29 @@ export class UserService {
     return Users;
   }
 
-  addUser(user: User) {    
-    Users.unshift(user);
-  }
-
-
+ 
   authenticateUser(email: string, password: string) {
     this.currentUser = Users.find(user => user.email === email && user.password === password);
     localStorage.setItem('authUser', this.currentUser.id.toString());
   }
 
   getAuthenticatedUser() {
-    return  this.getUserById(Number(localStorage.getItem('authUser')));
+    this.currentUser = this.getUserById(Number(localStorage.getItem('authUser')));
+    return  this.currentUser;
   }
+
 
   removeAuthenticatedUser() {
     localStorage.removeItem('authUser');
   }
 
+  registerAccount(user: User) {
+    Users.unshift(user);
+    this.authenticateUser(user.email, user.password);
+  }
   
+  genereteNewId(): number {
+    return this.getUsers().length + 2;
+  }
+
 }

@@ -9,7 +9,7 @@ export let Users: User[] = [
     country: 'Bulgaria',
     city: 'Plovdiv',
     role: 'user',
-    about: 'I am loking for payed work in role of .net back-end developer.',
+    summaryHtml: 'I am loking for payed work in role of .net back-end developer.'
   },
   {
     id: 2,
@@ -19,6 +19,6 @@ export let Users: User[] = [
     country: 'United States',
     city: 'New-York',
     role: 'company',
-    about: 'Google is the biggest company in IT sphere',
+    summaryHtml: '<h1>Google is the biggest company in IT sphere</h1>',
   }
 ];
